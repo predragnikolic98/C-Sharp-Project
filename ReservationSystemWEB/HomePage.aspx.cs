@@ -23,12 +23,30 @@ namespace ReservationSystemWEB
                 Session["Email"] = txtEmail.Text;
                 Session["Mobil"] = txtTelNumber.Text;
 
+                LinqToSQLDataContext db = new LinqToSQLDataContext();
+
                 string hobList = string.Empty;
                 foreach (ListItem hob in CheckBoxList1.Items)
                 {
                     if (hob.Selected == true)
+                    {
                         hobList += string.Format("{0} ", hob.Text);
+                        Reservation newReservation = new Reservation() { ID = Convert.ToInt32(hob.Text), Name = txtName.Text, Surname = txtSurname.Text, 
+                        Email = txtEmail.Text, MobileNumber = txtTelNumber.Text };
+                        db.Reservation.InsertOnSubmit(newReservation);
+                    }
                 }
+                db.SubmitChanges();
+
+
+
+                /* int[] array1 = new int[] { 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1 };
+                 for (var i = 0; i < CheckBoxList1.Items.Count; i++)
+                 {   
+                     if(array1[i] == 2)
+                     Response.Write(""+ CheckBoxList1.Item[i]);
+                     Console.WriteLine("Amount is {0} and type is {1}", myMoney[i].amount, myMoney[i].type);
+                 }*/
 
                 char[] splitter = { ' ' };
                 string[] partition = hobList.Split(splitter, StringSplitOptions.RemoveEmptyEntries);

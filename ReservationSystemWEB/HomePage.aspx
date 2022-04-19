@@ -2,6 +2,54 @@
 
 <!DOCTYPE html>
 
+<script runat="server">
+
+    int i = 1;
+    protected void Button2_Click(object sender, System.EventArgs e)
+    {
+               /* foreach (ListItem item in CheckBoxList1.Items)
+                {
+                    //get text in checkBox
+                    string text = item.Text.ToString();
+                    string[] colors = Enum.GetNames(typeof(System.Drawing.KnownColor));
+                    foreach (string colorname in colors)
+                    {
+                        if (text.ToLower() == colorname.ToLower())
+                        {
+                            item.Attributes.Add("Style", "background-color:" + text);
+                        }
+
+                    }
+                }*/
+       for (int i = 0; i < CheckBoxList1.Items.Count; i++)
+        {
+            if (CheckBoxList1.Items[i].Selected)
+            {
+                CheckBoxList1.Items[i].Attributes.Add("style", "color: red;");
+            }
+            else
+            {
+                CheckBoxList1.Items[i].Attributes.Add("style", "color: green;");
+            }
+        }
+
+
+    }
+
+    protected void checkboxAttendanceStatus_CheckedChanged(object sender, EventArgs e)
+{
+    CheckBox chk = sender as CheckBox;
+    if (chk.Checked)
+    {
+        chk.BackColor = System.Drawing.Color.Green;
+    } else
+    {
+        chk.BackColor = System.Drawing.Color.Red;
+    }
+}
+
+</script>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -63,36 +111,36 @@
                          RepeatDirection="Horizontal"
                          RepeatLayout="Flow"
                          TextAlign="Right">
-                <asp:ListItem>  1 </asp:ListItem>
-                <asp:ListItem>  2 </asp:ListItem>
-                <asp:ListItem>  3 </asp:ListItem>
-                <asp:ListItem>  4 </asp:ListItem>
-                <asp:ListItem>  5 </asp:ListItem>
-                <asp:ListItem>  6 </asp:ListItem>
-                <asp:ListItem>  7 </asp:ListItem>
-                <asp:ListItem>  8  </asp:ListItem>
-                <asp:ListItem>  9  </asp:ListItem>
-                <asp:ListItem> 10</asp:ListItem>
-                <asp:ListItem> 11</asp:ListItem>
-                <asp:ListItem> 12</asp:ListItem>
-                <asp:ListItem> 13</asp:ListItem>
-                <asp:ListItem> 14</asp:ListItem>
-                <asp:ListItem> 15</asp:ListItem>
-                <asp:ListItem> 16</asp:ListItem>
-                <asp:ListItem> 17</asp:ListItem>
-                <asp:ListItem> 18</asp:ListItem>
-                <asp:ListItem> 19</asp:ListItem>
-                <asp:ListItem> 20</asp:ListItem>
-                <asp:ListItem> 21</asp:ListItem>
-                <asp:ListItem> 22</asp:ListItem>
-                <asp:ListItem> 23</asp:ListItem>
-                <asp:ListItem> 24</asp:ListItem>
-                <asp:ListItem> 25</asp:ListItem>
-                <asp:ListItem> 26</asp:ListItem>
-                <asp:ListItem> 27</asp:ListItem>
-                <asp:ListItem> 28</asp:ListItem>
-                <asp:ListItem> 29</asp:ListItem>
-                <asp:ListItem> 30</asp:ListItem>
+                <asp:ListItem Text="1" Value="1"></asp:ListItem>
+                <asp:ListItem Text="2" Value="2"></asp:ListItem>
+                <asp:ListItem Text="3" Value="3"></asp:ListItem>
+                <asp:ListItem Text="4" Value="4"></asp:ListItem>
+                <asp:ListItem Text="5" Value="5"></asp:ListItem>
+                <asp:ListItem Text="6" Value="6"></asp:ListItem>
+                <asp:ListItem Text="7" Value="7"></asp:ListItem>
+                <asp:ListItem Text="8" Value="8"></asp:ListItem>
+                <asp:ListItem Text="9" Value="9"></asp:ListItem>
+                <asp:ListItem Text="10" Value="10"></asp:ListItem>
+                <asp:ListItem Text="11" Value="11"></asp:ListItem>
+                <asp:ListItem Text="12" Value="12"></asp:ListItem>
+                <asp:ListItem Text="13" Value="13"></asp:ListItem>
+                <asp:ListItem Text="14" Value="14"></asp:ListItem>
+                <asp:ListItem Text="15" Value="15"></asp:ListItem>
+                <asp:ListItem Text="16" Value="16"></asp:ListItem>
+                <asp:ListItem Text="17" Value="17"></asp:ListItem>
+                <asp:ListItem Text="18" Value="18"></asp:ListItem>
+                <asp:ListItem Text="19" Value="19"></asp:ListItem>
+                <asp:ListItem Text="20" Value="20"></asp:ListItem>
+                <asp:ListItem Text="21" Value="21"></asp:ListItem>
+                <asp:ListItem Text="22" Value="22"></asp:ListItem>
+                <asp:ListItem Text="23" Value="23"></asp:ListItem>
+                <asp:ListItem Text="24" Value="24"></asp:ListItem>
+                <asp:ListItem Text="25" Value="25"></asp:ListItem>
+                <asp:ListItem Text="26" Value="26"></asp:ListItem>
+                <asp:ListItem Text="27" Value="27"></asp:ListItem>
+                <asp:ListItem Text="28" Value="28"></asp:ListItem>
+                <asp:ListItem Text="29" Value="29"></asp:ListItem>
+                <asp:ListItem Text="30" Value="30"></asp:ListItem>
             </asp:CheckBoxList>
         </div>
         <div id="div2">
@@ -118,13 +166,19 @@
             <asp:TextBox ID="txtTelNumber" runat="server"></asp:TextBox>
         </p>
 
+            <ItemTemplate>
+   <asp:CheckBox ID="checkboxAttendanceStatus" BackColor="Red" runat="server" AutoPostBack="true" OnCheckedChanged="checkboxAttendanceStatus_CheckedChanged"/>
+</ItemTemplate>
         <p>
             <asp:Button ID="Button1" runat="server" Text="Dále" OnClick="Button1_Click" />
+        </p>
+        <p>
+            <asp:Button ID="Button2" runat="server" Text="Dále" OnClick="Button2_Click" />
         </p>
     </div>
 
     </form>
         <!--<asp:Label ID="Label8" runat="server"><% =Session["Mess"]%></asp:Label> -->
-    <!--<a href="Recapitulation.aspx">Zrušení rezervace</a>-->
+    <a href="Recapitulation.aspx">Zrušení rezervace</a>
     </body>
 </html>
