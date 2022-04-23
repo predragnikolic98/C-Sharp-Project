@@ -12,6 +12,16 @@ namespace ReservationSystemWEB
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            using (var db = new LinqToSQLDataContext())
+            {
+                var line = from subject in db.Reservation
+                           select subject;
+
+                foreach (var entry in line)
+                {
+                    CheckBoxList1.Items[entry.ID-1].Enabled = false;
+                }
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -24,6 +34,7 @@ namespace ReservationSystemWEB
                 Session["Mobil"] = txtTelNumber.Text;
 
                 LinqToSQLDataContext db = new LinqToSQLDataContext();
+                DatabaseCommands com = new DatabaseCommands();
 
                 string hobList = string.Empty;
                 foreach (ListItem hob in CheckBoxList1.Items)
@@ -31,22 +42,11 @@ namespace ReservationSystemWEB
                     if (hob.Selected == true)
                     {
                         hobList += string.Format("{0} ", hob.Text);
-                        Reservation newReservation = new Reservation() { ID = Convert.ToInt32(hob.Text), Name = txtName.Text, Surname = txtSurname.Text, 
-                        Email = txtEmail.Text, MobileNumber = txtTelNumber.Text };
-                        db.Reservation.InsertOnSubmit(newReservation);
+                        com.InsertRecord(db, Convert.ToInt32(hob.Text), txtName.Text, txtSurname.Text, txtEmail.Text, txtTelNumber.Text);
                     }
                 }
                 db.SubmitChanges();
 
-
-
-                /* int[] array1 = new int[] { 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1 };
-                 for (var i = 0; i < CheckBoxList1.Items.Count; i++)
-                 {   
-                     if(array1[i] == 2)
-                     Response.Write(""+ CheckBoxList1.Item[i]);
-                     Console.WriteLine("Amount is {0} and type is {1}", myMoney[i].amount, myMoney[i].type);
-                 }*/
 
                 char[] splitter = { ' ' };
                 string[] partition = hobList.Split(splitter, StringSplitOptions.RemoveEmptyEntries);

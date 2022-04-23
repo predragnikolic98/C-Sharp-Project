@@ -114,6 +114,7 @@
     <Compile Include="Cancellation.aspx.designer.cs">
       <DependentUpon>Cancellation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseCommands.cs" />
     <Compile Include="HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

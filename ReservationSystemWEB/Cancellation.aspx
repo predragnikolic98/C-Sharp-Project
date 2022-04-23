@@ -12,10 +12,6 @@
         <div>
                         <h3>Zrušení rezervace: </h3>
             <p>Pro zrušení rezervace doplňte následující informace: </p>
-        <p>
-            <asp:Label ID="Label1" runat="server" Text="Jméno: "></asp:Label> 
-            <asp:TextBox ID="txtName" runat="server" ></asp:TextBox>
-        </p>
             
         <p>
             <asp:Label ID="Label2" runat="server" Text="Příjmeni: "></asp:Label>

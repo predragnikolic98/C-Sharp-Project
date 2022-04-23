@@ -3,51 +3,6 @@
 <!DOCTYPE html>
 
 <script runat="server">
-
-    int i = 1;
-    protected void Button2_Click(object sender, System.EventArgs e)
-    {
-               /* foreach (ListItem item in CheckBoxList1.Items)
-                {
-                    //get text in checkBox
-                    string text = item.Text.ToString();
-                    string[] colors = Enum.GetNames(typeof(System.Drawing.KnownColor));
-                    foreach (string colorname in colors)
-                    {
-                        if (text.ToLower() == colorname.ToLower())
-                        {
-                            item.Attributes.Add("Style", "background-color:" + text);
-                        }
-
-                    }
-                }*/
-       for (int i = 0; i < CheckBoxList1.Items.Count; i++)
-        {
-            if (CheckBoxList1.Items[i].Selected)
-            {
-                CheckBoxList1.Items[i].Attributes.Add("style", "color: red;");
-            }
-            else
-            {
-                CheckBoxList1.Items[i].Attributes.Add("style", "color: green;");
-            }
-        }
-
-
-    }
-
-    protected void checkboxAttendanceStatus_CheckedChanged(object sender, EventArgs e)
-{
-    CheckBox chk = sender as CheckBox;
-    if (chk.Checked)
-    {
-        chk.BackColor = System.Drawing.Color.Green;
-    } else
-    {
-        chk.BackColor = System.Drawing.Color.Red;
-    }
-}
-
 </script>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -103,7 +58,7 @@
         <div id="div1">
             <asp:Label ID="Label5" runat="server" Text="Sedadla: "></asp:Label>
              <br />
-            <asp:CheckBoxList ID="CheckBoxList1" runat="server" CssClass="mycheckbox"
+            <asp:CheckBoxList ID="CheckBoxList1" OnCheckedChanged="checkboxAttendanceStatus_CheckedChanged" runat="server" CssClass="mycheckbox"
                          AutoPostBack="True"
                          CellPadding="15"
                          CellSpacing="15"
@@ -111,7 +66,7 @@
                          RepeatDirection="Horizontal"
                          RepeatLayout="Flow"
                          TextAlign="Right">
-                <asp:ListItem Text="1" Value="1"></asp:ListItem>
+                <asp:ListItem Text="1" Value="1" OnCheckedChanged="checkboxAttendanceStatus_CheckedChanged"></asp:ListItem>
                 <asp:ListItem Text="2" Value="2"></asp:ListItem>
                 <asp:ListItem Text="3" Value="3"></asp:ListItem>
                 <asp:ListItem Text="4" Value="4"></asp:ListItem>
@@ -166,15 +121,11 @@
             <asp:TextBox ID="txtTelNumber" runat="server"></asp:TextBox>
         </p>
 
-            <ItemTemplate>
-   <asp:CheckBox ID="checkboxAttendanceStatus" BackColor="Red" runat="server" AutoPostBack="true" OnCheckedChanged="checkboxAttendanceStatus_CheckedChanged"/>
-</ItemTemplate>
+
         <p>
             <asp:Button ID="Button1" runat="server" Text="Dále" OnClick="Button1_Click" />
         </p>
-        <p>
-            <asp:Button ID="Button2" runat="server" Text="Dále" OnClick="Button2_Click" />
-        </p>
+
     </div>
 
     </form>

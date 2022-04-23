@@ -123,15 +123,6 @@ namespace ReservationSystemWEB
         protected global::System.Web.UI.WebControls.TextBox txtTelNumber;
 
         /// <summary>
-        /// ovládací prvek checkboxAttendanceStatus.
-        /// </summary>
-        /// <remarks>
-        /// Automaticky generované pole.
-        /// Pro úpravy přesuňte pole deklarace ze souboru návrháře do souboru kódu na pozadí.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox checkboxAttendanceStatus;
-
-        /// <summary>
         /// ovládací prvek Button1.
         /// </summary>
         /// <remarks>
@@ -139,15 +130,6 @@ namespace ReservationSystemWEB
         /// Pro úpravy přesuňte pole deklarace ze souboru návrháře do souboru kódu na pozadí.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-
-        /// <summary>
-        /// ovládací prvek Button2.
-        /// </summary>
-        /// <remarks>
-        /// Automaticky generované pole.
-        /// Pro úpravy přesuňte pole deklarace ze souboru návrháře do souboru kódu na pozadí.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
 
         /// <summary>
         /// ovládací prvek Label8.

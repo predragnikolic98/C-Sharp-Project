@@ -24,24 +24,6 @@ namespace ReservationSystemWEB
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// ovládací prvek Label1.
-        /// </summary>
-        /// <remarks>
-        /// Automaticky generované pole.
-        /// Pro úpravy přesuňte pole deklarace ze souboru návrháře do souboru kódu na pozadí.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-
-        /// <summary>
-        /// ovládací prvek txtName.
-        /// </summary>
-        /// <remarks>
-        /// Automaticky generované pole.
-        /// Pro úpravy přesuňte pole deklarace ze souboru návrháře do souboru kódu na pozadí.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtName;
-
-        /// <summary>
         /// ovládací prvek Label2.
         /// </summary>
         /// <remarks>
