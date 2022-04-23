@@ -1,0 +1,17 @@
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\bin\Debug\ReservationDesktopUI.exe.config
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\bin\Debug\ReservationDesktopUI.exe
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\bin\Debug\ReservationDesktopUI.pdb
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\obj\Debug\ReservationDesktopUI.csproj.AssemblyReference.cache
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\obj\Debug\MainWindow.g.cs
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\obj\Debug\App.g.cs
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\obj\Debug\ReservationDesktopUI_MarkupCompile.cache
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\obj\Debug\ReservationDesktopUI_MarkupCompile.lref
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\obj\Debug\MainWindow.baml
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\obj\Debug\ReservationDesktopUI.g.resources
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\obj\Debug\ReservationDesktopUI.Properties.Resources.resources
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\obj\Debug\ReservationDesktopUI.csproj.GenerateResource.cache
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\obj\Debug\ReservationDesktopUI.csproj.CoreCompileInputs.cache
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\obj\Debug\ReservationDesktopUI.exe
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\obj\Debug\ReservationDesktopUI.pdb
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\obj\Debug\Zkouska.g.cs
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\obj\Debug\Zkouska.baml
