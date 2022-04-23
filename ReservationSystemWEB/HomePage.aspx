@@ -1,40 +1,18 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" Inherits="ReservationSystemWEB.HomePage" %>
 
+
 <!DOCTYPE html>
-
-<script runat="server">
-</script>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<script runat="server"></script>
+<html lang="en">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-        <style type="text/css">
-
-.mycheckbox td
-{
-   border:1px solid #f2f2f2;
-   line-height:30px;
-}
-
-.mycheckbox td label
-{
-    line-height:30px;
-    color:#f2f2f2;
-}
-  
-#div1 {
-    float:left;
-    margin-left: 7%;
-    margin-top: 2%;
-
-}
-#div2 {
-    float:right;
-    margin-right: 13%;
-    margin-top: 2%;
-}
-       
+<title>Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
 [type="checkbox"]{
   width:40px;
   height:40px;
@@ -42,22 +20,25 @@
   border-radius: 50%;
   border:5px dashed #000;
 }
-
-  .Button
-    {
-        border-style :solid;
-        font-family :Monotype Corsiva;
-        background-color:Black;
-        color:Red;   
-    } 
-        </style>
+</style>
 </head>
 <body>
-    <h2>Rezervační systém</h2>
-    <form id="form1" runat="server" style="border-style: solid">
-        <div id="div1">
-            <asp:Label ID="Label5" runat="server" Text="Sedadla: "></asp:Label>
-             <br />
+<form id="form1" runat="server">
+    
+    <div class="w3-top">
+      <div class="w3-bar w3-black w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="HomePage.aspx" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="Cancellation.aspx" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ZRUŠENÍ REZERVACE</a>
+      </div>
+    </div>
+
+    
+      <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+        <h2 class="w3-wide">Rezervační systém sedadel</h2>
+        <br>
+        <div>
+            
             <asp:CheckBoxList ID="CheckBoxList1" OnCheckedChanged="checkboxAttendanceStatus_CheckedChanged" runat="server" CssClass="mycheckbox"
                          AutoPostBack="True"
                          CellPadding="15"
@@ -66,70 +47,68 @@
                          RepeatDirection="Horizontal"
                          RepeatLayout="Flow"
                          TextAlign="Right">
-                <asp:ListItem Text="1" Value="1" OnCheckedChanged="checkboxAttendanceStatus_CheckedChanged"></asp:ListItem>
-                <asp:ListItem Text="2" Value="2"></asp:ListItem>
-                <asp:ListItem Text="3" Value="3"></asp:ListItem>
-                <asp:ListItem Text="4" Value="4"></asp:ListItem>
-                <asp:ListItem Text="5" Value="5"></asp:ListItem>
-                <asp:ListItem Text="6" Value="6"></asp:ListItem>
-                <asp:ListItem Text="7" Value="7"></asp:ListItem>
-                <asp:ListItem Text="8" Value="8"></asp:ListItem>
-                <asp:ListItem Text="9" Value="9"></asp:ListItem>
-                <asp:ListItem Text="10" Value="10"></asp:ListItem>
-                <asp:ListItem Text="11" Value="11"></asp:ListItem>
-                <asp:ListItem Text="12" Value="12"></asp:ListItem>
-                <asp:ListItem Text="13" Value="13"></asp:ListItem>
-                <asp:ListItem Text="14" Value="14"></asp:ListItem>
-                <asp:ListItem Text="15" Value="15"></asp:ListItem>
-                <asp:ListItem Text="16" Value="16"></asp:ListItem>
-                <asp:ListItem Text="17" Value="17"></asp:ListItem>
-                <asp:ListItem Text="18" Value="18"></asp:ListItem>
-                <asp:ListItem Text="19" Value="19"></asp:ListItem>
-                <asp:ListItem Text="20" Value="20"></asp:ListItem>
-                <asp:ListItem Text="21" Value="21"></asp:ListItem>
-                <asp:ListItem Text="22" Value="22"></asp:ListItem>
-                <asp:ListItem Text="23" Value="23"></asp:ListItem>
-                <asp:ListItem Text="24" Value="24"></asp:ListItem>
-                <asp:ListItem Text="25" Value="25"></asp:ListItem>
-                <asp:ListItem Text="26" Value="26"></asp:ListItem>
-                <asp:ListItem Text="27" Value="27"></asp:ListItem>
-                <asp:ListItem Text="28" Value="28"></asp:ListItem>
-                <asp:ListItem Text="29" Value="29"></asp:ListItem>
-                <asp:ListItem Text="30" Value="30"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="1"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="2"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="3"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="4"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="5"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="6"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="7"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="8"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="9"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="10"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="11"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="12"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="13"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="14"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="15"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="16"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="17"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="18"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="19"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="20"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="21"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="22"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="23"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="24"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="25"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="26"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="27"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="28"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="29"></asp:ListItem>
+                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="30"></asp:ListItem>
             </asp:CheckBoxList>
         </div>
-        <div id="div2">
-            <asp:Label ID="Label7" runat="server" Text="Kontaktní údaje: "></asp:Label>
-        <p>
-            <asp:Label ID="Label1" runat="server" Text="Jméno: " style="margin-right: 16%;"></asp:Label> 
-            <asp:TextBox ID="txtName" runat="server" ></asp:TextBox>
-        </p>
-            
-        <p>
-            <asp:Label ID="Label2" runat="server" Text="Příjmeni: " style="margin-right: 11%;"></asp:Label>
-            <asp:TextBox ID="txtSurname" runat="server"></asp:TextBox>
-        </p>
-            
-        <p>
-            <asp:Label ID="Label3" runat="server" Text="Email: " style="margin-right: 17.7%;"></asp:Label>
-            <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
-        </p>
+      </div>
 
-        <p>
-            <asp:Label ID="Label4" runat="server" Text="Mobilní číslo: "></asp:Label>
-
-            <asp:TextBox ID="txtTelNumber" runat="server"></asp:TextBox>
-        </p>
-
-
-        <p>
-            <asp:Button ID="Button1" runat="server" Text="Dále" OnClick="Button1_Click" />
-        </p>
-
+      <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+        <h2 class="w3-wide w3-center">Vaše rezervace</h2>
+        <div class="w3-row w3-padding-32">
+            <form action="/action_page.php" target="_blank">
+              <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                <div class="w3-half">
+                 <asp:TextBox class="w3-input w3-border" ID="txtName" runat="server" placeholder="Jméno"></asp:TextBox>
+                </div>
+                <div class="w3-half">
+                  <asp:TextBox class="w3-input w3-border" ID="txtSurname" runat="server" placeholder="Příjmeni"></asp:TextBox>
+                </div>
+              </div>
+              <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                <div class="w3-half">
+                  <asp:TextBox class="w3-input w3-border" ID="txtEmail" runat="server" placeholder="Email"></asp:TextBox>
+                </div>
+                <div class="w3-half">
+                  <asp:TextBox class="w3-input w3-border" ID="txtTelNumber" runat="server" placeholder="Telefon"></asp:TextBox>
+                </div>
+              </div>
+              <asp:Button class="w3-button w3-black w3-section w3-right" ID="Button1" runat="server" Text="REZERVOVAT" OnClick="Button1_Click"/>
+            </form>        
+        </div>
+      </div>
     </div>
-
-    </form>
-        <!--<asp:Label ID="Label8" runat="server"><% =Session["Mess"]%></asp:Label> -->
-    <a href="Recapitulation.aspx">Zrušení rezervace</a>
-    </body>
+    <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+      <p class="w3-medium">C# Projekt</p>
+    </footer>
+ </form>
+</body>
 </html>
