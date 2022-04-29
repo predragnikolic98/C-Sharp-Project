@@ -39,14 +39,7 @@ namespace ReservationSystemWEB
                 Session["Email"] = txtEmail.Text;
                 Session["Mobil"] = txtTelNumber.Text;
 
-
-
-                //LinqToSQLDataContext db = new LinqToSQLDataContext();
-                //DatabaseCommands com = new DatabaseCommands();
-
-
-
-            string hobList = string.Empty;
+                string hobList = string.Empty;
                 foreach (ListItem hob in CheckBoxList1.Items)
                 {
 
@@ -71,7 +64,7 @@ namespace ReservationSystemWEB
                         }
 
                         hobList += string.Format("{0} ", hob.Text);
-                        //com.InsertRecord(db, Convert.ToInt32(hob.Text), txtName.Text, txtSurname.Text, txtEmail.Text, txtTelNumber.Text);
+                        
                     }
                 }
 

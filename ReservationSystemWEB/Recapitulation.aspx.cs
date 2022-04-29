@@ -19,7 +19,7 @@ namespace ReservationSystemWEB
             string seats = Request.QueryString["CheckList"];
 
             Session["seatsSplitted"] = seats;
-            //Response.Write(name);
+
 
         }
     }

@@ -15,3 +15,9 @@ C:\Users\FiNEN\source\repos\ReservationDesktopUI\obj\Debug\ReservationDesktopUI.
 C:\Users\FiNEN\source\repos\ReservationDesktopUI\obj\Debug\ReservationDesktopUI.pdb
 C:\Users\FiNEN\source\repos\ReservationDesktopUI\obj\Debug\Zkouska.g.cs
 C:\Users\FiNEN\source\repos\ReservationDesktopUI\obj\Debug\Zkouska.baml
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\obj\Debug\ReservationDesktopUI.csproj.SuggestedBindingRedirects.cache
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\FiNEN\source\repos\ReservationDesktopUI\obj\Debug\ReservationDesktopUI.csproj.CopyComplete
