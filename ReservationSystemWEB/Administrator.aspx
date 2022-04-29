@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Administrator.aspx.cs" Inherits="ReservationSystemWEB.Administrator" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Async="true" CodeBehind="Administrator.aspx.cs" Inherits="ReservationSystemWEB.Administrator" %>
 
 <!DOCTYPE html>
 
@@ -14,8 +14,8 @@
             <asp:PlaceHolder ID = "PlaceHolder1" runat="server" />
             <h3>Vyhledat konkrétní rezervaci: </h3>
         <p>
-            <asp:Label ID="Label2" runat="server" Text="Příjmeni: " style="margin-right: 11%;"></asp:Label>
-            <asp:TextBox ID="txtSurname" runat="server"></asp:TextBox>
+            <asp:Label ID="Label2" runat="server" Text="Email: " style="margin-right: 11%;"></asp:Label>
+            <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
         </p>
         <asp:PlaceHolder ID = "PlaceHolder2" runat="server" />
          <p>

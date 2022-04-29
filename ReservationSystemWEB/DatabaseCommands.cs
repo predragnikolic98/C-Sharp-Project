@@ -6,7 +6,7 @@ using System.Web;
 namespace ReservationSystemWEB
 {
     public class DatabaseCommands
-    {
+    {/*
         public bool DeleteRecord(LinqToSQLDataContext db, string email, string surname)
         {
             var deleteOrderDetails =
@@ -56,6 +56,6 @@ namespace ReservationSystemWEB
                 Console.WriteLine(e);
             }
         }
-
+        */
     }
 }

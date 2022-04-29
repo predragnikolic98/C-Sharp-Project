@@ -1,25 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Newtonsoft.Json;
 
 namespace ReservationSystemWEB
 {
     public partial class HomePage : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected async void Page_Load(object sender, EventArgs e)
         {
 
-            using (var db = new LinqToSQLDataContext())
+            Reservations dt = new Reservations();
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("https://localhost:44350/");
+            client.DefaultRequestHeaders.Accept.Clear();
+            HttpResponseMessage response = client.GetAsync("api/values").Result;
+            if (response.IsSuccessStatusCode)
             {
-                var line = from subject in db.Reservation
-                           select subject;
-
-                foreach (var entry in line)
+                var reservation = await response.Content.ReadAsStringAsync();
+                var EmpInfo = JsonConvert.DeserializeObject<IEnumerable<Reservations>>(reservation);
+                foreach (var entry in EmpInfo)
                 {
-                    CheckBoxList1.Items[entry.ID-1].Enabled = false;
+                    CheckBoxList1.Items[entry.Id - 1].Enabled = false;
                 }
             }
         }
@@ -33,23 +39,47 @@ namespace ReservationSystemWEB
                 Session["Email"] = txtEmail.Text;
                 Session["Mobil"] = txtTelNumber.Text;
 
-                LinqToSQLDataContext db = new LinqToSQLDataContext();
-                DatabaseCommands com = new DatabaseCommands();
 
-                string hobList = string.Empty;
+
+                //LinqToSQLDataContext db = new LinqToSQLDataContext();
+                //DatabaseCommands com = new DatabaseCommands();
+
+
+
+            string hobList = string.Empty;
                 foreach (ListItem hob in CheckBoxList1.Items)
                 {
+
                     if (hob.Selected == true)
                     {
+                        Reservations newReservation = new Reservations
+                        {
+                            Id = Convert.ToInt32(hob.Text),
+                            Name = txtName.Text,
+                            Surname = txtSurname.Text,
+                            Email = txtEmail.Text,
+                            MobileNumber = txtTelNumber.Text,
+
+                        };
+                        HttpClient client = new HttpClient();
+                        client.BaseAddress = new Uri("https://localhost:44350/");
+                        HttpResponseMessage response =
+                        client.PostAsJsonAsync("api/values", newReservation).Result;
+                        if (response.IsSuccessStatusCode)
+                        {
+                            //decimal result = response.Content.ReadAsAsync<decimal>().Result;
+                        }
+
                         hobList += string.Format("{0} ", hob.Text);
-                        com.InsertRecord(db, Convert.ToInt32(hob.Text), txtName.Text, txtSurname.Text, txtEmail.Text, txtTelNumber.Text);
+                        //com.InsertRecord(db, Convert.ToInt32(hob.Text), txtName.Text, txtSurname.Text, txtEmail.Text, txtTelNumber.Text);
                     }
                 }
-                db.SubmitChanges();
 
 
                 char[] splitter = { ' ' };
                 string[] partition = hobList.Split(splitter, StringSplitOptions.RemoveEmptyEntries);
+
+
 
                 string splittedSeat = string.Empty;
                 for (int i = 0; i < partition.Length; i++)
@@ -64,7 +94,6 @@ namespace ReservationSystemWEB
             }
             else
             {
-                //Session["Mess"] = "ney";
                 Response.Write("<script>alert('Nebyly vyplněné všechny udáje potřebné k dokončení rezervace')</script>");
             }
 

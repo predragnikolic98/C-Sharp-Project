@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" Inherits="ReservationSystemWEB.HomePage" %>
+﻿    <%@ Page Language="C#" Async="true" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" Inherits="ReservationSystemWEB.HomePage" %>
 
 
 <!DOCTYPE html>
@@ -105,7 +105,6 @@ body {font-family: "Lato", sans-serif}
             </form>        
         </div>
       </div>
-    </div>
     <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
       <p class="w3-medium">C# Projekt</p>
     </footer>

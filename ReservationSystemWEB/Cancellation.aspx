@@ -1,13 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Cancellation.aspx.cs" Inherits="ReservationSystemWEB.Cancellation" %>
+﻿<%@ Page Language="C#" Async="true" AutoEventWireup="true" CodeBehind="Cancellation.aspx.cs" Inherits="ReservationSystemWEB.Cancellation" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 <title>Zrušení rezervace</title>
 </head>
 <body>
@@ -28,11 +28,8 @@
                         
             <p>Pro zrušení rezervace doplňte následující informace: </p>
             <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-                <div class="w3-half">
-                  <asp:Label ID="Label2" runat="server"></asp:Label>
-                  <asp:TextBox class="w3-input w3-border" ID="txtSurname" runat="server" placeholder="Příjmeni"></asp:TextBox>
-                </div>
-                <div class="w3-half">
+
+                <div class="w3-full">
                     <asp:Label ID="Label3" runat="server"></asp:Label>
                   <asp:TextBox class="w3-input w3-border" ID="txtEmail" runat="server" placeholder="Email"></asp:TextBox>
                 </div>

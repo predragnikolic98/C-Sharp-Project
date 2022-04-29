@@ -42,13 +42,13 @@ namespace ReservationSystemWEB
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// ovládací prvek txtSurname.
+        /// ovládací prvek txtEmail.
         /// </summary>
         /// <remarks>
         /// Automaticky generované pole.
         /// Pro úpravy přesuňte pole deklarace ze souboru návrháře do souboru kódu na pozadí.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSurname;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
         /// ovládací prvek PlaceHolder2.

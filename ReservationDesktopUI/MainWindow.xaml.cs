@@ -26,26 +26,30 @@ namespace ReservationDesktopUI
 
 
         }
-        private void HandleCheck(object sender, RoutedEventArgs e)
+
+        private void cbFeature_CheckedChanged(object sender, RoutedEventArgs e)
         {
-            text1.Text = "The CheckBox is checked.";
+            //chkbox30.IsChecked = false;
         }
 
-        private void HandleUnchecked(object sender, RoutedEventArgs e)
+        private void OptOK_Click(object sender, RoutedEventArgs e)
         {
-            text1.Text = "The CheckBox is unchecked.";
+            string ItemValue = "";
+
+            foreach (CheckBox item in Options.Items)
+            {
+                if (item.IsChecked == true)
+                {
+                    if (ItemValue != "") { ItemValue = ItemValue + ", "; }
+
+                    ItemValue = ItemValue + item.Content.ToString();
+                }
+            }
+
+            MessageBox.Show((ItemValue + " is checked."));
         }
 
-        private void HandleThirdState(object sender, RoutedEventArgs e)
-        {
-            text1.Text = "The CheckBox is in the indeterminate state.";
-        }
 
-        private void OpenPage(object sender, RoutedEventArgs e)
-        {
-            Zkouska obj = new Zkouska();
-            //this.Visibility = Visibility.Hidden;
 
-        }
     }
 }
