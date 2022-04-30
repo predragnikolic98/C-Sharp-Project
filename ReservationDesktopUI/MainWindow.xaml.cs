@@ -100,7 +100,7 @@ namespace ReservationDesktopUI
 
 
 
-
+        //Watermark Name
         private void txtName_MouseEnter(object sender, MouseEventArgs e)
         {
             if (txtName.Text == "Jméno")
@@ -120,7 +120,26 @@ namespace ReservationDesktopUI
 
         }
 
+        private void txtName_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (txtName.Text == "Jméno")
+            {
+                txtName.Clear();
+                txtName.Foreground = Brushes.Black;
+            }
+        }
 
+
+        private void txtName_PreviewLostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (txtName.Text == "")
+            {
+                txtName.Text = "Jméno";
+                txtName.Foreground = Brushes.DarkGray;
+            }
+        }
+
+        //Watermark Surname
 
         private void txtSurname_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -140,6 +159,27 @@ namespace ReservationDesktopUI
             }
         }
 
+
+        private void txtSurname_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (txtSurname.Text == "Příjmení")
+            {
+                txtSurname.Clear();
+                txtSurname.Foreground = Brushes.Black;
+            }
+        }
+
+        private void txtSurname_PreviewLostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (txtSurname.Text == "")
+            {
+                txtSurname.Text = "Příjmení";
+                txtSurname.Foreground = Brushes.DarkGray;
+            }
+        }
+
+        //Watermark email
+
         private void txtEmail_MouseEnter(object sender, MouseEventArgs e)
         {
             if (txtEmail.Text == "Email")
@@ -157,6 +197,26 @@ namespace ReservationDesktopUI
                 txtEmail.Foreground = Brushes.DarkGray;
             }
         }
+
+        private void txtEmail_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (txtEmail.Text == "Email")
+            {
+                txtEmail.Clear();
+                txtEmail.Foreground = Brushes.Black;
+            }
+        }
+
+        private void txtEmail_PreviewLostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (txtEmail.Text == "")
+            {
+                txtEmail.Text = "Email";
+                txtEmail.Foreground = Brushes.DarkGray;
+            }
+        }
+
+        //Watermark MobileNumber
 
         private void txtMobileNumber_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -176,33 +236,22 @@ namespace ReservationDesktopUI
             }
         }
 
-        private void txtName_TextChanged(object sender, TextChangedEventArgs e)
+        private void txtMobileNumber_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            if(txtName.Text != "" || txtName.Text != "Jméno")
-                txtName.Foreground = Brushes.Black;
-
-        }
-
-        private void txtSurname_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (txtSurname.Text != "" || txtSurname.Text != "Příjmení")
-                txtSurname.Foreground = Brushes.Black;
-
-        }
-
-        private void txtEmail_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (txtEmail.Text != "" || txtEmail.Text != "Email")
-                txtEmail.Foreground = Brushes.Black;
-
-        }
-        
-        private void txtMobileNumber_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (txtMobileNumber.Text != "" || txtMobileNumber.Text != "Telefonní číslo")
+            if (txtMobileNumber.Text == "Telefonní číslo")
+            {
+                txtMobileNumber.Clear();
                 txtMobileNumber.Foreground = Brushes.Black;
-
+            }
         }
 
+        private void txtMobileNumber_PreviewLostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (txtMobileNumber.Text == "")
+            {
+                txtMobileNumber.Text = "Telefonní číslo";
+                txtMobileNumber.Foreground = Brushes.DarkGray;
+            }
+        }
     }
 }

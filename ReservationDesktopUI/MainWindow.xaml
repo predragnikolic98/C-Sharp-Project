@@ -163,13 +163,17 @@
         </ListBox>
 
         <TextBox x:Name="txtName" Text="Jméno" FontSize="20" Grid.Row="6" Grid.Column="2"  Grid.ColumnSpan="4" 
-                 Foreground="DarkGray" MouseEnter="txtName_MouseEnter" MouseLeave="txtName_MouseLeave" TextChanged="txtName_TextChanged"  />
+                 Foreground="DarkGray" MouseEnter="txtName_MouseEnter" MouseLeave="txtName_MouseLeave" 
+                 PreviewKeyDown="txtName_PreviewKeyDown" PreviewLostKeyboardFocus="txtName_PreviewLostKeyboardFocus" />
         <TextBox x:Name="txtSurname" Text="Příjmení" FontSize="20" Grid.Row="6" Grid.Column="7" Grid.ColumnSpan="4" 
-                 Foreground="DarkGray" MouseEnter="txtSurname_MouseEnter" MouseLeave="txtSurname_MouseLeave" TextChanged="txtSurname_TextChanged"/>
+                 Foreground="DarkGray" MouseEnter="txtSurname_MouseEnter" MouseLeave="txtSurname_MouseLeave" 
+                 PreviewKeyDown="txtSurname_PreviewKeyDown" PreviewLostKeyboardFocus="txtSurname_PreviewLostKeyboardFocus"/>
         <TextBox x:Name="txtEmail" Text="Email" FontSize="20" Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="4" 
-                 Foreground="DarkGray" MouseEnter="txtEmail_MouseEnter" MouseLeave="txtEmail_MouseLeave" TextChanged="txtEmail_TextChanged" />
+                 Foreground="DarkGray" MouseEnter="txtEmail_MouseEnter" MouseLeave="txtEmail_MouseLeave" 
+                 PreviewKeyDown="txtEmail_PreviewKeyDown" PreviewLostKeyboardFocus="txtEmail_PreviewLostKeyboardFocus" />
         <TextBox x:Name="txtMobileNumber" Text="Telefonní číslo" FontSize="20" Grid.Row="8" Grid.Column="7" Grid.ColumnSpan="4" 
-                 Foreground="DarkGray" MouseEnter="txtMobileNumber_MouseEnter" MouseLeave="txtMobileNumber_MouseLeave" TextChanged="txtMobileNumber_TextChanged"/>
+                 Foreground="DarkGray" MouseEnter="txtMobileNumber_MouseEnter" MouseLeave="txtMobileNumber_MouseLeave" 
+                 PreviewKeyDown="txtMobileNumber_PreviewKeyDown" PreviewLostKeyboardFocus="txtMobileNumber_PreviewLostKeyboardFocus" />
         
         <Button Content="Dale" Foreground="White" Grid.Column="7" Grid.Row="10"
                 Grid.ColumnSpan="2" FontSize="15" Click="OptOK_Click" />
