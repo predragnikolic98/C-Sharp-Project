@@ -11,6 +11,7 @@
     <form id="form1" runat="server">
         <div>
             <h3>Přehled všech rezervací: </h3>
+             <asp:Literal ID="ltrResult" runat="server"></asp:Literal>
             <asp:PlaceHolder ID = "PlaceHolder1" runat="server" />
             <h3>Vyhledat konkrétní rezervaci: </h3>
         <p>
@@ -19,6 +20,7 @@
         </p>
         <asp:PlaceHolder ID = "PlaceHolder2" runat="server" />
          <p>
+             <br/>
             <asp:Button ID="Button2" runat="server" Text="Dále" OnClick="Button1_Click"  />
         </p>
 

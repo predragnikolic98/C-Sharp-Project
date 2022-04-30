@@ -32,7 +32,8 @@ namespace ReservationSystemWEB
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (txtEmail.Text != string.Empty && txtName.Text != string.Empty && txtSurname.Text != string.Empty && txtTelNumber.Text != string.Empty && CheckBoxList1.SelectedItem != null)
+            if (txtEmail.Text != string.Empty && txtName.Text != string.Empty && txtSurname.Text != string.Empty && 
+                txtTelNumber.Text != string.Empty && CheckBoxList1.SelectedItem != null)
             {
                 Session["Name"] = txtName.Text;
                 Session["Surname"] = txtSurname.Text;
@@ -58,21 +59,19 @@ namespace ReservationSystemWEB
                         client.BaseAddress = new Uri("https://localhost:44350/");
                         HttpResponseMessage response =
                         client.PostAsJsonAsync("api/values", newReservation).Result;
+                        /*
                         if (response.IsSuccessStatusCode)
                         {
-                            //decimal result = response.Content.ReadAsAsync<decimal>().Result;
-                        }
+                            decimal result = response.Content.ReadAsAsync<decimal>().Result;
+                        }*/
 
                         hobList += string.Format("{0} ", hob.Text);
                         
                     }
                 }
 
-
                 char[] splitter = { ' ' };
                 string[] partition = hobList.Split(splitter, StringSplitOptions.RemoveEmptyEntries);
-
-
 
                 string splittedSeat = string.Empty;
                 for (int i = 0; i < partition.Length; i++)

@@ -9,6 +9,16 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 <title>Zrušení rezervace</title>
+    <style>
+body {font-family: "Lato", sans-serif}
+[type="checkbox"]{
+  width:40px;
+  height:40px;
+  margin:10px;
+  border-radius: 50%;
+  border:5px dashed #000;
+}
+</style>
 </head>
 <body>
 <form id="form1" runat="server">
@@ -24,6 +34,7 @@
     
       <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
         <h2 class="w3-wide">Zrušení rezervace</h2>
+          
             <div>
                         
             <p>Pro zrušení rezervace doplňte následující informace: </p>
@@ -34,11 +45,24 @@
                   <asp:TextBox class="w3-input w3-border" ID="txtEmail" runat="server" placeholder="Email"></asp:TextBox>
                 </div>
               </div>
+                <p>
+                <asp:Label ID="Label2" runat="server"><% =Session["ChooseSeats"]%></asp:Label>
+                </p>
+                <asp:CheckBoxList id="chklst" runat="server" OnCheckedChanged="checkboxAttendanceStatus_CheckedChanged" CssClass="mycheckbox"
+                         AutoPostBack="True"
+                         CellPadding="15"
+                         CellSpacing="15"
+                         RepeatColumns="10"
+                         RepeatDirection="Horizontal"
+                         RepeatLayout="Flow"
+                         TextAlign="Right" /> <br/>
              <p>
+                
                 <asp:Label ID="Label4" runat="server"><% =Session["Message"]%></asp:Label>
             </p>
             <p>
-              <asp:Button class="w3-button w3-black w3-section w3-center" ID="Button1" runat="server" Text="Potvrdít" OnClick="Button1_Click" />
+                <asp:Button class="w3-button w3-black w3-section w3-center" ID="Button2" runat="server" 
+                    Text="Dále" OnClick="Button2_Click" />
             </p>
             </div>
         </form>

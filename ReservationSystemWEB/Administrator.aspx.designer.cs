@@ -1,10 +1,10 @@
 ﻿//------------------------------------------------------------------------------
-// <automaticky generován>
+// <automaticky generováno>
 //     Tento kód vygeneroval nástroj.
 //
-//     Změny tohoto souboru mohou způsobit nesprávné chování a budou ztraceny, jestliže
+//     Změny tohoto souboru mohou způsobit nesprávné chování a budou ztraceny,
 //     kód je znovu vygenerován. 
-// </automaticky generován>
+// </automaticky generováno>
 //------------------------------------------------------------------------------
 
 namespace ReservationSystemWEB
@@ -15,56 +15,65 @@ namespace ReservationSystemWEB
     {
 
         /// <summary>
-        /// ovládací prvek form1.
+        /// Ovládací prvek form1.
         /// </summary>
         /// <remarks>
         /// Automaticky generované pole.
-        /// Pro úpravy přesuňte pole deklarace ze souboru návrháře do souboru kódu na pozadí.
+        /// K úpravě deklarace pole přesunutí ze souboru návrháře do souboru kódu
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// ovládací prvek PlaceHolder1.
+        /// Ovládací prvek ltrResult.
         /// </summary>
         /// <remarks>
         /// Automaticky generované pole.
-        /// Pro úpravy přesuňte pole deklarace ze souboru návrháře do souboru kódu na pozadí.
+        /// K úpravě deklarace pole přesunutí ze souboru návrháře do souboru kódu
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltrResult;
+
+        /// <summary>
+        /// Ovládací prvek PlaceHolder1.
+        /// </summary>
+        /// <remarks>
+        /// Automaticky generované pole.
+        /// K úpravě deklarace pole přesunutí ze souboru návrháře do souboru kódu
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder1;
 
         /// <summary>
-        /// ovládací prvek Label2.
+        /// Ovládací prvek Label2.
         /// </summary>
         /// <remarks>
         /// Automaticky generované pole.
-        /// Pro úpravy přesuňte pole deklarace ze souboru návrháře do souboru kódu na pozadí.
+        /// K úpravě deklarace pole přesunutí ze souboru návrháře do souboru kódu
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// ovládací prvek txtEmail.
+        /// Ovládací prvek txtEmail.
         /// </summary>
         /// <remarks>
         /// Automaticky generované pole.
-        /// Pro úpravy přesuňte pole deklarace ze souboru návrháře do souboru kódu na pozadí.
+        /// K úpravě deklarace pole přesunutí ze souboru návrháře do souboru kódu
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
-        /// ovládací prvek PlaceHolder2.
+        /// Ovládací prvek PlaceHolder2.
         /// </summary>
         /// <remarks>
         /// Automaticky generované pole.
-        /// Pro úpravy přesuňte pole deklarace ze souboru návrháře do souboru kódu na pozadí.
+        /// K úpravě deklarace pole přesunutí ze souboru návrháře do souboru kódu
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder2;
 
         /// <summary>
-        /// ovládací prvek Button2.
+        /// Ovládací prvek Button2.
         /// </summary>
         /// <remarks>
         /// Automaticky generované pole.
-        /// Pro úpravy přesuňte pole deklarace ze souboru návrháře do souboru kódu na pozadí.
+        /// K úpravě deklarace pole přesunutí ze souboru návrháře do souboru kódu
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button2;
     }

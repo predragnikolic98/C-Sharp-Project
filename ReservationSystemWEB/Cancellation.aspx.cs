@@ -15,41 +15,87 @@ namespace ReservationSystemWEB
 {
     public partial class Cancellation : System.Web.UI.Page
     {
+
+        static bool switchCase = false;
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
-
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+
+        protected async void Button2_Click(object sender, EventArgs e)
         {
-            if (txtEmail.Text != string.Empty)
+
+            if (!switchCase)
             {
+                Session["Message"] = "";
+                Session["ChooseSeats"] = "";
                 Session["Email"] = txtEmail.Text;
-
-                
-
-                String email = txtEmail.Text;
-
                 Reservations dt = new Reservations();
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri("https://localhost:44350/");
                 client.DefaultRequestHeaders.Accept.Clear();
-                HttpResponseMessage response = client.DeleteAsync("api/values?email=" + txtEmail.Text + "").Result;
+                HttpResponseMessage response = client.GetAsync("api/values?email=" + txtEmail.Text + "").Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    Session["Message"] = "Rezervace byla úspěšně zrušena";
+
+                    var reservation = await response.Content.ReadAsStringAsync();
+                    if (reservation != "[]")
+                    {
+                        var EmpInfo = JsonConvert.DeserializeObject<IEnumerable<Reservations>>(reservation);
+
+                        foreach (var entry in EmpInfo)
+                        {
+                            chklst.Items.Add(entry.Id.ToString());
+                        }
+                        Button2.Text = "Potvrdit";
+                        switchCase = true;
+                        Session["ChooseSeats"] = "Vyberte sedadla u kterých chcete smazat rezervaci:";
+
+                    }
+                    else
+                        Session["Message"] = "Pro tento email nebyla nalezena žádná rezervace.";
+
                 }
-
-                Response.Write(email);
-
             }
             else
             {
-                Response.Write("<script>alert('Nebyly vyplněné všechny udáje potřebné k dokončení rezervace')</script>");
-            }
+                Session["ChooseSeats"] = "";
+                if (chklst.SelectedItem != null)
+                {
+                    foreach (ListItem hob in chklst.Items)
+                    {
+                        if (hob.Selected == true)
+                        {
+                            Session["Email"] = txtEmail.Text;
+                            Reservations dt = new Reservations();
+                            HttpClient client = new HttpClient();
+                            client.BaseAddress = new Uri("https://localhost:44350/");
+                            client.DefaultRequestHeaders.Accept.Clear();
+                            HttpResponseMessage response = client.DeleteAsync("api/values/5?email=" + txtEmail.Text + "&id=" + Convert.ToInt32(hob.Text) + "").Result;
+                            if (response.IsSuccessStatusCode)
+                            {
+                                Session["Message"] = "Rezervace byla úspěšně zrušena";
+                            }
+                            //chklst.Items.Remove(hob.Text);
+                        }
+                    }
 
+                    chklst.Items.Clear();
+
+                    switchCase = false;
+                    Button2.Text = "Dále";
+                }
+                else
+                {
+                    Session["Message"] = "Zrušení rezervace neproběhlo, protože jste nevybrali žádné sedalo, které chcete zrušit";
+                    chklst.Items.Clear();
+
+                    switchCase = false;
+                    Button2.Text = "Dále";
+                }
+            }
         }
+
     }
 }

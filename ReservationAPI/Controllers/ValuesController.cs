@@ -41,70 +41,6 @@ namespace ReservationAPI.Controllers
             }
         }
 
-        /*
-        // GET api/values/5
-        public string GetAll(int id)
-        {
-
-            using (var db = new LingToSqlDataContext())
-            {
-                var deleteOrderDetails =
-                     from details in db.Reservation
-                     where details.Id == 1
-                     select details;
-
-                foreach (var detail in deleteOrderDetails)
-                {
-                    return detail.Name;
-                }
-                return  string.Empty;
-            }
-        }
-
-        [HttpGet]
-        public string GetAll(int id)
-        {
-            return "value";
-        }
-        */
-
-        [HttpGet]
-        // Get api/values/6
-        public string GetAll(string name)
-        {
-            using (var db = new LingToSqlDataContext())
-            {
-                var deleteOrderDetails =
-                     from details in db.Reservation
-                     where details.Id == 1
-                     select details;
-
-                foreach (var detail in deleteOrderDetails)
-                {
-                    return detail.Name;
-                }
-                return string.Empty;
-            }
-        }
-
-        [HttpGet]
-        // Get api/values/6
-        public string GetOr(string zkouska)
-        {
-            using (var db = new LingToSqlDataContext())
-            {
-                var deleteOrderDetails =
-                     from details in db.Reservation
-                     where details.Id == 1
-                     select details;
-
-                foreach (var detail in deleteOrderDetails)
-                {
-                    return "jajik";
-                }
-                return string.Empty;
-            }
-        }
 
         // POST api/values
         public void Post([FromBody] Reservation newReservation)
@@ -131,13 +67,14 @@ namespace ReservationAPI.Controllers
         }
 
         // DELETE api/values/5
-        public void Delete(string email)
+        public void Delete(string email, int id)
         {
             using (var db = new LingToSqlDataContext())
             {
                 var deleteOrderDetails =
                 from details in db.Reservation
                 where details.Email == email
+                where details.Id == id
                 select details;
 
                 foreach (var detail in deleteOrderDetails)

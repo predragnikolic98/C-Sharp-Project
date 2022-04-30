@@ -42,6 +42,24 @@ namespace ReservationSystemWEB
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
+        /// Ovládací prvek Label2.
+        /// </summary>
+        /// <remarks>
+        /// Automaticky generované pole.
+        /// K úpravě deklarace pole přesunutí ze souboru návrháře do souboru kódu
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+
+        /// <summary>
+        /// Ovládací prvek chklst.
+        /// </summary>
+        /// <remarks>
+        /// Automaticky generované pole.
+        /// K úpravě deklarace pole přesunutí ze souboru návrháře do souboru kódu
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList chklst;
+
+        /// <summary>
         /// Ovládací prvek Label4.
         /// </summary>
         /// <remarks>
@@ -51,12 +69,12 @@ namespace ReservationSystemWEB
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Ovládací prvek Button1.
+        /// Ovládací prvek Button2.
         /// </summary>
         /// <remarks>
         /// Automaticky generované pole.
         /// K úpravě deklarace pole přesunutí ze souboru návrháře do souboru kódu
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button Button2;
     }
 }

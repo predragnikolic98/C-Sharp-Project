@@ -15,20 +15,20 @@ namespace ReservationSystemWEB
 {
     public partial class Administrator : System.Web.UI.Page
     {
- 
-        StringBuilder table = new StringBuilder();
+        StringBuilder tableAll = new StringBuilder();
+        StringBuilder tableSelect = new StringBuilder();
         protected async void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            //if (IsPostBack)
             {
 
-                table.Append("<table border = '1'>");
-                table.Append("<tr><th> Číslo sedadla </th>" +
+                tableAll.Append("<table border = '1'>");
+                tableAll.Append("<tr><th> Číslo sedadla </th>" +
                              "<th> Jméno </th>" +
                              "<th> Příjmení </th>" +
                              "<th> Email </th>" +
                              "<th> Telefon </th>");
-                table.Append("</tr>");
+                tableAll.Append("</tr>");
 
                 Reservations dt = new Reservations();
                 HttpClient client = new HttpClient();
@@ -41,23 +41,20 @@ namespace ReservationSystemWEB
                     var EmpInfo = JsonConvert.DeserializeObject<IEnumerable<Reservations>>(reservation);
                     foreach (var entry in EmpInfo)
                     {
-                        table.Append("<tr'>");
-                        table.Append("<td>" + entry.Id + "</td>");
-                        table.Append("<td>" + entry.Name + "</td>");
-                        table.Append("<td>" + entry.Surname + "</td>");
-                        table.Append("<td>" + entry.Email + "</td>");
-                        table.Append("<td>" + entry.MobileNumber + "</td>");
-                        table.Append("</tr>");
+                        tableAll.Append("<tr'>");
+                        tableAll.Append("<td>" + entry.Id + "</td>");
+                        tableAll.Append("<td>" + entry.Name + "</td>");
+                        tableAll.Append("<td>" + entry.Surname + "</td>");
+                        tableAll.Append("<td>" + entry.Email + "</td>");
+                        tableAll.Append("<td>" + entry.MobileNumber + "</td>");
+                        tableAll.Append("</tr>");
                     }
                 }
 
-                table.Append("</table");
-                PlaceHolder1.Controls.Add(new Literal { Text = table.ToString() });
-
+                tableAll.Append("</table");
+                PlaceHolder1.Controls.Add(new Literal { Text = tableAll.ToString() });
             }
-
-
-    }
+        }
 
 
         protected async void Button1_Click(object sender, EventArgs e)
@@ -65,13 +62,13 @@ namespace ReservationSystemWEB
             if (txtEmail.Text != string.Empty)
             {
 
-                table.Append("<table border = '1'>");
-                table.Append("<tr><th> Číslo sedadla </th>" +
+                tableSelect.Append("<table border = '1'>");
+                tableSelect.Append("<tr><th> Číslo sedadla </th>" +
                              "<th> Jméno </th>" +
                              "<th> Příjmení </th>" +
                              "<th> Email </th>" +
                              "<th> Telefon </th>");
-                table.Append("</tr>");
+                tableSelect.Append("</tr>");
 
                 Reservations dt = new Reservations();
                 HttpClient client = new HttpClient();
@@ -84,18 +81,18 @@ namespace ReservationSystemWEB
                     var EmpInfo = JsonConvert.DeserializeObject<IEnumerable<Reservations>>(reservation);
                     foreach (var entry in EmpInfo)
                     {
-                        table.Append("<tr'>");
-                        table.Append("<td>" + entry.Id + "</td>");
-                        table.Append("<td>" + entry.Name + "</td>");
-                        table.Append("<td>" + entry.Surname + "</td>");
-                        table.Append("<td>" + entry.Email + "</td>");
-                        table.Append("<td>" + entry.MobileNumber + "</td>");
-                        table.Append("</tr>");
+                        tableSelect.Append("<tr'>");
+                        tableSelect.Append("<td>" + entry.Id + "</td>");
+                        tableSelect.Append("<td>" + entry.Name + "</td>");
+                        tableSelect.Append("<td>" + entry.Surname + "</td>");
+                        tableSelect.Append("<td>" + entry.Email + "</td>");
+                        tableSelect.Append("<td>" + entry.MobileNumber + "</td>");
+                        tableSelect.Append("</tr>");
                     }
                 }
 
-                table.Append("</table");
-                PlaceHolder1.Controls.Add(new Literal { Text = table.ToString() });
+                tableSelect.Append("</table");
+                PlaceHolder2.Controls.Add(new Literal { Text = tableSelect.ToString() });
             }
             else
             {
