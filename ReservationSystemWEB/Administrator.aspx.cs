@@ -42,7 +42,7 @@ namespace ReservationSystemWEB
                     var EmpInfo = JsonConvert.DeserializeObject<IEnumerable<Reservations>>(reservation);
                     foreach (var entry in EmpInfo)
                     {
-                        tableAll.Append("<tr'>");
+                        tableAll.Append("<tr>");
                         tableAll.Append("<td>" + entry.Id + "</td>");
                         tableAll.Append("<td>" + entry.Name + "</td>");
                         tableAll.Append("<td>" + entry.Surname + "</td>");

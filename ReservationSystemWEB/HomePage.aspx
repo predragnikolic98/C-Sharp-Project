@@ -29,12 +29,13 @@ body {font-family: "Lato", sans-serif}
       <div class="w3-bar w3-black w3-card">
         <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
         <a href="HomePage.aspx" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-        <a href="Cancellation.aspx" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ZRUŠENÍ REZERVACE</a>
+        <a href="Cancellation.aspx" class="w3-bar-item w3-button w3-padding-large">ZRUŠENÍ REZERVACE</a>
+        <a href="Administrator.aspx" class="w3-bar-item w3-button w3-padding-large w3-right">ADMINISTRATOR</a>
       </div>
     </div>
 
     
-      <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+      <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:900px">
         <h2 class="w3-wide">Rezervační systém sedadel</h2>
         <br>
         <div>
@@ -47,36 +48,36 @@ body {font-family: "Lato", sans-serif}
                          RepeatDirection="Horizontal"
                          RepeatLayout="Flow"
                          TextAlign="Right">
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="1"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="2"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="3"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="4"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="5"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="6"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="7"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="8"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="9"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="10"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="11"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="12"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="13"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="14"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="15"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="16"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="17"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="18"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="19"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="20"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="21"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="22"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="23"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="24"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="25"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="26"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="27"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="28"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="29"></asp:ListItem>
-                <asp:ListItem Style="color:#fff;font-size:0.0001em; text-indent:-9999px" Value="30"></asp:ListItem>
+                <asp:ListItem Value="1">01</asp:ListItem>
+                <asp:ListItem Value="2">02</asp:ListItem>
+                <asp:ListItem Value="3">03</asp:ListItem>
+                <asp:ListItem Value="4">04</asp:ListItem>
+                <asp:ListItem Value="5">05</asp:ListItem>
+                <asp:ListItem Value="6">06</asp:ListItem>
+                <asp:ListItem Value="7">07</asp:ListItem>
+                <asp:ListItem Value="8">08</asp:ListItem>
+                <asp:ListItem Value="9">09</asp:ListItem>
+                <asp:ListItem Value="10">10</asp:ListItem>
+                <asp:ListItem Value="11">11</asp:ListItem>
+                <asp:ListItem Value="12">12</asp:ListItem>
+                <asp:ListItem Value="13">13</asp:ListItem>
+                <asp:ListItem Value="14">14</asp:ListItem>
+                <asp:ListItem Value="15">15</asp:ListItem>
+                <asp:ListItem Value="16">16</asp:ListItem>
+                <asp:ListItem Value="17">17</asp:ListItem>
+                <asp:ListItem Value="18">18</asp:ListItem>
+                <asp:ListItem Value="19">19</asp:ListItem>
+                <asp:ListItem Value="20">20</asp:ListItem>
+                <asp:ListItem Value="21">21</asp:ListItem>
+                <asp:ListItem Value="22">22</asp:ListItem>
+                <asp:ListItem Value="23">23</asp:ListItem>
+                <asp:ListItem Value="24">24</asp:ListItem>
+                <asp:ListItem Value="25">25</asp:ListItem>
+                <asp:ListItem Value="26">26</asp:ListItem>
+                <asp:ListItem Value="27">27</asp:ListItem>
+                <asp:ListItem Value="28">28</asp:ListItem>
+                <asp:ListItem Value="29">29</asp:ListItem>
+                <asp:ListItem Value="30">30</asp:ListItem>
             </asp:CheckBoxList>
         </div>
       </div>

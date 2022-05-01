@@ -39,7 +39,7 @@ namespace ReservationDesktopUI
                 var EmpInfo = JsonConvert.DeserializeObject<IEnumerable<Reservations>>(reservation);
                 foreach (var entry in EmpInfo)
                 {
-                    //nefunguje - mělo být vypíná switchů
+                    
                     foreach (CheckBox item in Options.Items)
                     {
                         if (entry.Id == Convert.ToInt32(item.Content)) {

@@ -28,11 +28,12 @@ body {font-family: "Lato", sans-serif}
         <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
         <a href="HomePage.aspx" class="w3-bar-item w3-button w3-padding-large">HOME</a>
         <a href="Cancellation.aspx" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ZRUŠENÍ REZERVACE</a>
+        <a href="Administrator.aspx" class="w3-bar-item w3-button w3-padding-large w3-right">ADMINISTRATOR</a>
       </div>
     </div>
 
     
-      <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+      <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
         <h2 class="w3-wide">Zrušení rezervace</h2>
           
             <div>
