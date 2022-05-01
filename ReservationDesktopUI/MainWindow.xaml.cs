@@ -26,50 +26,42 @@ namespace ReservationDesktopUI
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-
-        private async void Start(object sender, RoutedEventArgs e)
-        {
-            Reservations dt = new Reservations();
+            
+                        Reservations dt = new Reservations();
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:44350/");
             client.DefaultRequestHeaders.Accept.Clear();
             HttpResponseMessage response = client.GetAsync("api/values").Result;
             if (response.IsSuccessStatusCode)
             {
-                var reservation = await response.Content.ReadAsStringAsync();
+                //var reservation = await response.Content.ReadAsStringAsync();
+                var reservation = response.Content.ReadAsStringAsync().Result;
                 var EmpInfo = JsonConvert.DeserializeObject<IEnumerable<Reservations>>(reservation);
                 foreach (var entry in EmpInfo)
                 {
                     //nefunguje - mělo být vypíná switchů
                     foreach (CheckBox item in Options.Items)
                     {
-                        
-                        if (entry.Id == Convert.ToInt32(item.Content))
-                            item.IsChecked = false;
+                        if (entry.Id == Convert.ToInt32(item.Content)) {
+                            item.IsEnabled = false;
+                            item.Background = Brushes.DarkGray;
+                        }
                     }
                     
                 }
             }
         }
 
-        private void cbFeature_CheckedChanged(object sender, RoutedEventArgs e)
-        {
-            chkbox30.IsChecked = false;
-        }
-
-
 
         private void OptOK_Click(object sender, RoutedEventArgs e)
         {
             string ItemValue = "";
+            bool check = false;
 
             foreach (CheckBox item in Options.Items)
             {
                 if (item.IsChecked == true)
                 {
-
 
                     Reservations newReservation = new Reservations
                     {
@@ -84,18 +76,25 @@ namespace ReservationDesktopUI
                     client.BaseAddress = new Uri("https://localhost:44350/");
                     HttpResponseMessage response =
                     client.PostAsJsonAsync("api/values", newReservation).Result;
-                    if (response.IsSuccessStatusCode)
+                    if (!response.IsSuccessStatusCode)
                     {
-                        //decimal result = response.Content.ReadAsAsync<decimal>().Result;
+                        MessageBox.Show(("Rezervace nebyla provedena."));
                     }
+                    else
+                    {
+                        if (ItemValue != "") { ItemValue = ItemValue + ", "; }
 
-                    if (ItemValue != "") { ItemValue = ItemValue + ", "; }
-
-                    ItemValue = ItemValue + item.Content.ToString();
+                        ItemValue = ItemValue + item.Content.ToString();
+                        item.IsChecked = false;
+                        item.IsEnabled = false;
+                        item.Background = Brushes.DarkGray;
+                        check = true;
+                    }
                 }
             }
-
-            MessageBox.Show((ItemValue + " is checked."));
+            if(check)
+            MessageBox.Show(("Sedadla: "+ItemValue + " byla rezervována pro osobu: \nJméno: "+txtName.Text+" " +
+                "\nPříjmení: "+txtSurname.Text+" \nEmail: "+txtEmail.Text+" \nTelefon: "+txtMobileNumber.Text+""));
         }
 
 
@@ -253,5 +252,6 @@ namespace ReservationDesktopUI
                 txtMobileNumber.Foreground = Brushes.DarkGray;
             }
         }
+
     }
 }

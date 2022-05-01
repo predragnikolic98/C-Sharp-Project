@@ -51,13 +51,13 @@ namespace ReservationSystemWEB
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Ovládací prvek txtEmail.
+        /// Ovládací prvek txtEmailGet.
         /// </summary>
         /// <remarks>
         /// Automaticky generované pole.
         /// K úpravě deklarace pole přesunutí ze souboru návrháře do souboru kódu
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtEmailGet;
 
         /// <summary>
         /// Ovládací prvek PlaceHolder2.
@@ -76,5 +76,59 @@ namespace ReservationSystemWEB
         /// K úpravě deklarace pole přesunutí ze souboru návrháře do souboru kódu
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button2;
+
+        /// <summary>
+        /// Ovládací prvek Label3.
+        /// </summary>
+        /// <remarks>
+        /// Automaticky generované pole.
+        /// K úpravě deklarace pole přesunutí ze souboru návrháře do souboru kódu
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
+
+        /// <summary>
+        /// Ovládací prvek txtEmailDelete.
+        /// </summary>
+        /// <remarks>
+        /// Automaticky generované pole.
+        /// K úpravě deklarace pole přesunutí ze souboru návrháře do souboru kódu
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEmailDelete;
+
+        /// <summary>
+        /// Ovládací prvek Label1.
+        /// </summary>
+        /// <remarks>
+        /// Automaticky generované pole.
+        /// K úpravě deklarace pole přesunutí ze souboru návrháře do souboru kódu
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
+        /// Ovládací prvek chklst.
+        /// </summary>
+        /// <remarks>
+        /// Automaticky generované pole.
+        /// K úpravě deklarace pole přesunutí ze souboru návrháře do souboru kódu
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList chklst;
+
+        /// <summary>
+        /// Ovládací prvek Label4.
+        /// </summary>
+        /// <remarks>
+        /// Automaticky generované pole.
+        /// K úpravě deklarace pole přesunutí ze souboru návrháře do souboru kódu
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label4;
+
+        /// <summary>
+        /// Ovládací prvek Button1.
+        /// </summary>
+        /// <remarks>
+        /// Automaticky generované pole.
+        /// K úpravě deklarace pole přesunutí ze souboru návrháře do souboru kódu
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

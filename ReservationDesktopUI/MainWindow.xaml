@@ -156,9 +156,9 @@
             </CheckBox>
             <CheckBox Grid.Column="9" Grid.Row="4" Content="28" Width="67" Height="63">
             </CheckBox>
-            <CheckBox Grid.Column="10" Grid.Row="4" Content="29" Width="67" Height="63" Name="chkbox29">
+            <CheckBox Grid.Column="10" Grid.Row="4" Content="29" Width="67" Height="63">
             </CheckBox>
-            <CheckBox Grid.Column="11" Grid.Row="4" Content="30" Width="67" Height="63" Name="chkbox30">
+            <CheckBox Grid.Column="11" Grid.Row="4" Content="30" Width="67" Height="63">
             </CheckBox>
         </ListBox>
 
