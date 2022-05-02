@@ -31,10 +31,8 @@ namespace ReservationSystemWEB
                              "<th> Telefon </th>");
                 tableAll.Append("</tr>");
 
-                Reservations dt = new Reservations();
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri("https://localhost:44350/");
-                client.DefaultRequestHeaders.Accept.Clear();
                 HttpResponseMessage response = client.GetAsync("api/values").Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -42,7 +40,7 @@ namespace ReservationSystemWEB
                     var EmpInfo = JsonConvert.DeserializeObject<IEnumerable<Reservations>>(reservation);
                     foreach (var entry in EmpInfo)
                     {
-                        tableAll.Append("<tr>");
+                        tableAll.Append("<tr'>");
                         tableAll.Append("<td>" + entry.Id + "</td>");
                         tableAll.Append("<td>" + entry.Name + "</td>");
                         tableAll.Append("<td>" + entry.Surname + "</td>");
@@ -60,36 +58,42 @@ namespace ReservationSystemWEB
 
         protected async void Button1_Click(object sender, EventArgs e)
         {
+            Session["MessageCurrent"] ="";
             if (txtEmailGet.Text != string.Empty)
             {
-
-                tableSelect.Append("<table border = '1'>");
-                tableSelect.Append("<tr><th> Číslo sedadla </th>" +
-                             "<th> Jméno </th>" +
-                             "<th> Příjmení </th>" +
-                             "<th> Email </th>" +
-                             "<th> Telefon </th>");
-                tableSelect.Append("</tr>");
-
-                Reservations dt = new Reservations();
+               
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri("https://localhost:44350/");
-                client.DefaultRequestHeaders.Accept.Clear();
                 HttpResponseMessage response = client.GetAsync("api/values?email="+txtEmailGet.Text + "").Result;
                 if (response.IsSuccessStatusCode)
                 {
                     var reservation = await response.Content.ReadAsStringAsync();
-                    var EmpInfo = JsonConvert.DeserializeObject<IEnumerable<Reservations>>(reservation);
-                    foreach (var entry in EmpInfo)
+                    if (reservation != "[]") 
                     {
-                        tableSelect.Append("<tr'>");
-                        tableSelect.Append("<td>" + entry.Id + "</td>");
-                        tableSelect.Append("<td>" + entry.Name + "</td>");
-                        tableSelect.Append("<td>" + entry.Surname + "</td>");
-                        tableSelect.Append("<td>" + entry.Email + "</td>");
-                        tableSelect.Append("<td>" + entry.MobileNumber + "</td>");
+                        var EmpInfo = JsonConvert.DeserializeObject<IEnumerable<Reservations>>(reservation);
+
+                        tableSelect.Append("<table border = '1'>");
+                        tableSelect.Append("<tr><th> Číslo sedadla </th>" +
+                                     "<th> Jméno </th>" +
+                                     "<th> Příjmení </th>" +
+                                     "<th> Email </th>" +
+                                     "<th> Telefon </th>");
                         tableSelect.Append("</tr>");
+
+                        foreach (var entry in EmpInfo)
+                        {
+                            tableSelect.Append("<tr'>");
+                            tableSelect.Append("<td>" + entry.Id + "</td>");
+                            tableSelect.Append("<td>" + entry.Name + "</td>");
+                            tableSelect.Append("<td>" + entry.Surname + "</td>");
+                            tableSelect.Append("<td>" + entry.Email + "</td>");
+                            tableSelect.Append("<td>" + entry.MobileNumber + "</td>");
+                            tableSelect.Append("</tr>");
+                        }
                     }
+                    else
+                        Session["MessageCurrent"] = "Pro tento email nebyla nalezena žádná rezervace.";
+
                 }
 
                 tableSelect.Append("</table");
@@ -97,7 +101,7 @@ namespace ReservationSystemWEB
             }
             else
             {
-                Response.Write("<script>alert('Doplňte prosím příjmení.')</script>");
+                Response.Write("<script>alert('Doplňte prosím email.')</script>");
             }
         }
         protected async void Button2_Click(object sender, EventArgs e)
@@ -105,13 +109,12 @@ namespace ReservationSystemWEB
 
             if (!switchCase)
             {
-                Session["Message"] = "";
+                Session["MessageDelete"] = "";
                 Session["ChooseSeats"] = "";
                 Session["Email"] = txtEmailDelete.Text;
-                Reservations dt = new Reservations();
+
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri("https://localhost:44350/");
-                client.DefaultRequestHeaders.Accept.Clear();
                 HttpResponseMessage response = client.GetAsync("api/values?email=" + txtEmailDelete.Text + "").Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -131,7 +134,7 @@ namespace ReservationSystemWEB
 
                     }
                     else
-                        Session["Message"] = "Pro tento email nebyla nalezena žádná rezervace.";
+                        Session["MessageDelete"] = "Pro tento email nebyla nalezena žádná rezervace.";
 
                 }
             }
@@ -145,14 +148,12 @@ namespace ReservationSystemWEB
                         if (hob.Selected == true)
                         {
                             Session["Email"] = txtEmailDelete.Text;
-                            Reservations dt = new Reservations();
                             HttpClient client = new HttpClient();
                             client.BaseAddress = new Uri("https://localhost:44350/");
-                            client.DefaultRequestHeaders.Accept.Clear();
                             HttpResponseMessage response = client.DeleteAsync("api/values/5?email=" + txtEmailDelete.Text + "&id=" + Convert.ToInt32(hob.Text) + "").Result;
                             if (response.IsSuccessStatusCode)
                             {
-                                Session["Message"] = "Rezervace byla úspěšně zrušena";
+                                Session["MessageDelete"] = "Rezervace byla úspěšně zrušena";
                             }
                             //chklst.Items.Remove(hob.Text);
                         }
@@ -165,7 +166,8 @@ namespace ReservationSystemWEB
                 }
                 else
                 {
-                    Session["Message"] = "Zrušení rezervace neproběhlo, protože jste nevybrali žádné sedalo, které chcete zrušit";
+                    Session["MessageDelete"] = "Zrušení rezervace neproběhlo, protože jste nevybrali žádné sedalo, " +
+                        "které chcete zrušit";
                     chklst.Items.Clear();
 
                     switchCase = false;

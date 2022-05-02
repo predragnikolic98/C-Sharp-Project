@@ -26,11 +26,9 @@ namespace ReservationDesktopUI
         public MainWindow()
         {
             InitializeComponent();
-            
-                        Reservations dt = new Reservations();
+
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:44350/");
-            client.DefaultRequestHeaders.Accept.Clear();
             HttpResponseMessage response = client.GetAsync("api/values").Result;
             if (response.IsSuccessStatusCode)
             {
@@ -39,7 +37,6 @@ namespace ReservationDesktopUI
                 var EmpInfo = JsonConvert.DeserializeObject<IEnumerable<Reservations>>(reservation);
                 foreach (var entry in EmpInfo)
                 {
-                    
                     foreach (CheckBox item in Options.Items)
                     {
                         if (entry.Id == Convert.ToInt32(item.Content)) {
@@ -53,7 +50,7 @@ namespace ReservationDesktopUI
         }
 
 
-        private void OptOK_Click(object sender, RoutedEventArgs e)
+        private void Submit(object sender, RoutedEventArgs e)
         {
             string ItemValue = "";
             bool check = false;

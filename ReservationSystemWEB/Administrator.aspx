@@ -5,9 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 <title>Adminostrator</title>
 <style>
 body {font-family: "Lato", sans-serif}
@@ -64,17 +64,12 @@ body {font-family: "Lato", sans-serif}
        </p>
        <div>
         <asp:PlaceHolder ID = "PlaceHolder2" runat="server" />
+           <p><asp:Label ID="Label5" runat="server"><% =Session["MessageCurrent"]%></asp:Label></p>
         <p><br/><asp:Button class="w3-button w3-black w3-section w3-center" ID="Button2" runat="server" Text="Dále" OnClick="Button1_Click"  /></p>
        </div>
        </div>
      </div>    
-            
-        
-
-       
-
-
-
+           
      <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
         <h2 class="w3-wide">Zrušení konkrétní rezervace</h2>          
             <div>
@@ -94,10 +89,10 @@ body {font-family: "Lato", sans-serif}
                          RepeatDirection="Horizontal"
                          RepeatLayout="Flow"
                          TextAlign="Right" /> <br/>
-             <p><asp:Label ID="Label4" runat="server"><% =Session["Message"]%></asp:Label></p>
+             <p><asp:Label ID="Label4" runat="server"><% =Session["MessageDelete"]%></asp:Label></p>
              <p><asp:Button class="w3-button w3-black w3-section w3-center"  ID="Button1" runat="server" Text="Dále" OnClick="Button2_Click" /></p>    
             </div>
-           </div>
+
 
 
     </form>

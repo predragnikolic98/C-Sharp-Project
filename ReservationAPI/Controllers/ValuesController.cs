@@ -25,7 +25,7 @@ namespace ReservationAPI.Controllers
             }   
         }
 
-        // GET api/<ValuesController>/5 
+        // GET api/<ValuesController>/email 
 
         public IEnumerable<Reservation> Get(string email)
         {
@@ -66,7 +66,7 @@ namespace ReservationAPI.Controllers
         {
         }
 
-        // DELETE api/values/5
+        // DELETE api/values/email&id
         public void Delete(string email, int id)
         {
             using (var db = new LingToSqlDataContext())

@@ -13,11 +13,8 @@ namespace ReservationSystemWEB
     {
         protected async void Page_Load(object sender, EventArgs e)
         {
-
-            Reservations dt = new Reservations();
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:44350/");
-            client.DefaultRequestHeaders.Accept.Clear();
             HttpResponseMessage response = client.GetAsync("api/values").Result;
             if (response.IsSuccessStatusCode)
             {
@@ -59,11 +56,6 @@ namespace ReservationSystemWEB
                         client.BaseAddress = new Uri("https://localhost:44350/");
                         HttpResponseMessage response =
                         client.PostAsJsonAsync("api/values", newReservation).Result;
-                        /*
-                        if (response.IsSuccessStatusCode)
-                        {
-                            decimal result = response.Content.ReadAsAsync<decimal>().Result;
-                        }*/
 
                         hobList += string.Format("{0} ", hob.Text);
                         

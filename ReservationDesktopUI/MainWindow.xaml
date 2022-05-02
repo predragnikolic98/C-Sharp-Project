@@ -162,7 +162,7 @@
             </CheckBox>
         </ListBox>
 
-        <TextBox x:Name="txtName" Text="Jméno" FontSize="20" Grid.Row="6" Grid.Column="2"  Grid.ColumnSpan="4" 
+        <TextBox x:Name="txtName" Text="Jméno" FontSize="20" Grid.Row="6" Grid.Column="2"  Grid.ColumnSpan="4"  
                  Foreground="DarkGray" MouseEnter="txtName_MouseEnter" MouseLeave="txtName_MouseLeave" 
                  PreviewKeyDown="txtName_PreviewKeyDown" PreviewLostKeyboardFocus="txtName_PreviewLostKeyboardFocus" />
         <TextBox x:Name="txtSurname" Text="Příjmení" FontSize="20" Grid.Row="6" Grid.Column="7" Grid.ColumnSpan="4" 
@@ -175,7 +175,7 @@
                  Foreground="DarkGray" MouseEnter="txtMobileNumber_MouseEnter" MouseLeave="txtMobileNumber_MouseLeave" 
                  PreviewKeyDown="txtMobileNumber_PreviewKeyDown" PreviewLostKeyboardFocus="txtMobileNumber_PreviewLostKeyboardFocus" />
         
-        <Button Content="Dale" Foreground="White" Grid.Column="7" Grid.Row="10"
-                Grid.ColumnSpan="2" FontSize="15" Click="OptOK_Click" />
+        <Button Content="Potvrdit" Foreground="White" Grid.Column="5" Grid.Row="10"
+                Grid.ColumnSpan="3" FontSize="15" Click="Submit" Background="#FF0948BE"/>
     </Grid>
 </Window>

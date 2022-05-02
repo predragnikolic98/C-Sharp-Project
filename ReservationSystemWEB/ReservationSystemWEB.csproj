@@ -139,7 +139,6 @@
     <Content Include="Cancellation.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="Recapitulation.aspx" />
-    <Content Include="TestApi.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -174,13 +173,6 @@
       <DependentUpon>Recapitulation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reservations.cs" />
-    <Compile Include="TestApi.aspx.cs">
-      <DependentUpon>TestApi.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TestApi.aspx.designer.cs">
-      <DependentUpon>TestApi.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

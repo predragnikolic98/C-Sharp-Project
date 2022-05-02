@@ -21,8 +21,6 @@ namespace ReservationSystemWEB
         {
 
         }
-
-
         protected async void Button2_Click(object sender, EventArgs e)
         {
 
@@ -31,10 +29,8 @@ namespace ReservationSystemWEB
                 Session["Message"] = "";
                 Session["ChooseSeats"] = "";
                 Session["Email"] = txtEmail.Text;
-                Reservations dt = new Reservations();
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri("https://localhost:44350/");
-                client.DefaultRequestHeaders.Accept.Clear();
                 HttpResponseMessage response = client.GetAsync("api/values?email=" + txtEmail.Text + "").Result;
                 if (response.IsSuccessStatusCode)
                 {
@@ -68,10 +64,8 @@ namespace ReservationSystemWEB
                         if (hob.Selected == true)
                         {
                             Session["Email"] = txtEmail.Text;
-                            Reservations dt = new Reservations();
                             HttpClient client = new HttpClient();
                             client.BaseAddress = new Uri("https://localhost:44350/");
-                            client.DefaultRequestHeaders.Accept.Clear();
                             HttpResponseMessage response = client.DeleteAsync("api/values/5?email=" + txtEmail.Text + "&id=" + Convert.ToInt32(hob.Text) + "").Result;
                             if (response.IsSuccessStatusCode)
                             {
